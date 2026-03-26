@@ -1,0 +1,11 @@
+{
+  "name": "slowresearch",
+  "description": "Human-in-the-loop experiment iteration for domains with delayed feedback. The slow counterpart to autoresearch.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Art Kulak",
+    "url": "https://github.com/artkulak"
+  },
+  "repository": "https://github.com/artkulak/slowresearch",
+  "license": "MIT"
+}
