@@ -67,7 +67,7 @@ When the user invokes a slowresearch command:
 1. **NEVER fabricate metrics.** Only the human provides real-world results.
 2. **NEVER modify the results TSV outside of `/slowresearch:log`.** The log is the source of truth.
 3. **ONE experiment per step.** Each `/slowresearch:step` proposes exactly one next experiment.
-4. **Hypotheses are first-class.** Every experiment must state what hypothesis it tests.
+4. **Hypotheses are first-class.** Every new experiment should state what hypothesis it tests. Historical/baseline entries may omit it.
 5. **Learn forward, never revert.** There is no rollback. Failed experiments produce learnings, not reverts.
 6. **Read before recommending.** Always read the full results TSV before proposing the next step.
 7. **Config is immutable during a campaign.** Don't modify `slowresearch-config.json` after init unless the user explicitly asks.

@@ -65,9 +65,7 @@ Hypothesis: Naming specific games increases engagement because it triggers recog
 
   ... post goes live, wait 48h ...
 
-> /slowresearch:log
-Description: Used "Why Roblox's economy is better than most countries'"
-Impressions: 8200, Comments: 12, Engagement rate: 0.15%
+> /slowresearch:log "Roblox economy post" impressions=8200 comments=12 engagement_rate=0.15
 → This is 3x your average impressions. Confirms the hypothesis — naming games works.
 
 > /slowresearch:step
