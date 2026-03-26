@@ -123,10 +123,11 @@ Hypothesis: Fewer choices reduce decision paralysis and increase trial starts.
 
 ## State Files
 
-slowresearch creates two gitignored files in your project:
+slowresearch creates three gitignored files in your project:
 
 - **`slowresearch-config.json`** — campaign goal, metrics, and context
 - **`slowresearch-results.tsv`** — experiment log with metrics and learnings
+- **`slowresearch-current.md`** — current in-progress experiment (written by `/step`, cleared by `/log`)
 
 ## Use Cases
 

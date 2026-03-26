@@ -2,7 +2,7 @@
 
 ## When invoked: `/slowresearch:step`
 
-Proposes the next experiment based on accumulated history. Read-only — does not modify any files.
+Proposes the next experiment based on accumulated history. Writes the proposal to `slowresearch-current.md`.
 
 ## Protocol
 
@@ -10,6 +10,10 @@ Proposes the next experiment based on accumulated history. Read-only — does no
 
 1. Read `slowresearch-config.json`. If missing → tell user to run `/slowresearch` first.
 2. Read `slowresearch-results.tsv`. If missing or empty (header only) → this is the first experiment.
+3. Check if `slowresearch-current.md` exists:
+   - If it exists → warn: "You have a pending experiment: [description from file]. Log it first with `/slowresearch:log`, or run `/slowresearch:step --skip` to discard and propose a new one."
+   - If `--skip` flag was provided → delete `slowresearch-current.md` and continue.
+   - If no flag → stop and wait for user input.
 
 ### Step 2: Analyze history
 
@@ -54,9 +58,30 @@ Output a clear recommendation:
 **Why this is the highest-value next test:** [reasoning — what makes this better than alternatives]
 ```
 
-### Step 4: Remind
+### Step 4: Write `slowresearch-current.md`
 
-End with: "Run `/slowresearch:log` after you have results to record."
+After proposing the experiment, write `slowresearch-current.md` in the current directory with this format:
+
+```markdown
+# Current Experiment
+
+**ID:** [next ID from TSV]
+**Proposed:** [today's date YYYY-MM-DD]
+**Hypothesis:** [hypothesis from the proposal]
+**What to do:** [specific action from the proposal]
+**Expected outcome:** [expected outcome from the proposal]
+**Watch for:** [key thing to observe]
+
+## Campaign Context
+- [N] experiments completed
+- Best: #[id] ([description]) — [best primary metric value]
+- Average [primary_metric]: [average]
+- Top pattern: [strongest signal from data]
+```
+
+### Step 5: Remind
+
+End with: "Run `/slowresearch:log` after you have results to record. Your experiment is saved in `slowresearch-current.md` so you won't lose track."
 
 ## Priority Order for Choosing Next Experiment
 

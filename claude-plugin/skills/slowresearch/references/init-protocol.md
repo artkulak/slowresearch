@@ -62,7 +62,7 @@ id\tdate\tdescription\thypothesis\t<metric1>\t<metric2>\t...\tstatus\tlearnings
 
 Metric columns are dynamic, derived from the config.
 
-3. Check `.gitignore` — if it exists, append `slowresearch-config.json` and `slowresearch-results.tsv` if not already present. If no `.gitignore`, create one with these entries.
+3. Check `.gitignore` — if it exists, append `slowresearch-config.json`, `slowresearch-results.tsv`, and `slowresearch-current.md` if not already present. If no `.gitignore`, create one with these entries.
 
 ### Step 4: Confirm
 

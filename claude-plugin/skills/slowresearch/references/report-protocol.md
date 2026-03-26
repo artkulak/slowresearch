@@ -10,10 +10,19 @@ Comprehensive analysis of all experiments. Read-only — does not modify any fil
 
 1. Read `slowresearch-config.json`. If missing → tell user to run `/slowresearch` first.
 2. Read `slowresearch-results.tsv`. If no completed experiments → tell user to log some results first.
+3. Read `slowresearch-current.md` if it exists.
 
 ### Step 2: Generate report
 
 Structure the report in these sections:
+
+#### In Progress (only if `slowresearch-current.md` exists)
+
+```
+⏳ Current experiment: [description from current file]
+Hypothesis: [hypothesis]
+Proposed: [date]
+```
 
 #### Campaign Overview
 

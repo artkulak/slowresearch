@@ -12,5 +12,7 @@ EXECUTE IMMEDIATELY — do not deliberate.
 2. Read `skills/slowresearch/references/step-protocol.md` for the step protocol
 3. Read `slowresearch-config.json` from the current directory
 4. Read `slowresearch-results.tsv` from the current directory
-5. Analyze all prior experiments
-6. Propose ONE next experiment with hypothesis, expected outcome, and reasoning
+5. Check if `slowresearch-current.md` exists — if so, warn about pending experiment (see protocol)
+6. Analyze all prior experiments
+7. Propose ONE next experiment with hypothesis, expected outcome, and reasoning
+8. Write `slowresearch-current.md` with the proposal and campaign context

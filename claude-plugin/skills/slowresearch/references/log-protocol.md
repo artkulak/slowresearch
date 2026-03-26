@@ -10,10 +10,13 @@ Records results from a completed experiment. Appends to the results TSV.
 
 1. Read `slowresearch-config.json`. If missing → tell user to run `/slowresearch` first.
 2. Read `slowresearch-results.tsv`. Count existing rows to determine next ID.
+3. Read `slowresearch-current.md` if it exists. Extract description, hypothesis, expected outcome, and ID to use as defaults for this log entry.
 
 ### Step 2: Gather results
 
-**Check what was provided in arguments first.** Parse inline args for:
+**Pre-fill from `slowresearch-current.md` if it exists.** Use the description and hypothesis from the current file as defaults. The user only needs to provide metrics.
+
+**Then check what was provided in arguments.** Parse inline args for:
 - Description (quoted string or unkeyed text)
 - `metric=value` pairs matching config metric names
 - `date=YYYY-MM-DD` (optional, default: today)
@@ -71,6 +74,12 @@ After logging, automatically provide a brief analysis:
    - If hypothesis is empty, skip this section entirely
 3. **Ranking update** — "This experiment ranks [#N out of M] by [primary_metric]"
 4. **Quick suggestion** — One sentence on what this means for the next experiment
+
+### Step 5: Clear current experiment
+
+If `slowresearch-current.md` exists, delete it. The experiment is now logged in the TSV — the current file is no longer needed.
+
+### Step 6: Next action
 
 End with: "Run `/slowresearch:step` for a detailed next experiment recommendation, or `/slowresearch:report` for a full analysis."
 

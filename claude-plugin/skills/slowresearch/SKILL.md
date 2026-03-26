@@ -24,7 +24,7 @@ The loop is the same: **hypothesis → experiment → measure → learn → repe
 
 ## State Files
 
-slowresearch uses two local files (gitignored by default):
+slowresearch uses three local files (gitignored by default):
 
 ### `slowresearch-config.json`
 
@@ -49,6 +49,10 @@ id	date	description	hypothesis	impressions	comments	engagement_rate	status	learn
 ```
 
 Valid statuses: `completed`, `in_progress`, `skipped`
+
+### `slowresearch-current.md`
+
+Written by `/slowresearch:step`, deleted by `/slowresearch:log`. Tracks the current in-progress experiment so context persists across sessions. Human-readable markdown with experiment details and campaign context summary.
 
 ## Command Routing
 
