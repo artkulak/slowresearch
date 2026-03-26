@@ -19,8 +19,18 @@ That's slowresearch.
 ## Install
 
 ```bash
-claude plugin add artkulak/slowresearch
+claude plugin marketplace add artkulak/slowresearch
+claude plugin install slowresearch
 ```
+
+### Update
+
+```bash
+claude plugin marketplace update slowresearch
+claude plugin update "slowresearch@slowresearch"
+```
+
+Restart Claude Code after updating.
 
 ## Commands
 
